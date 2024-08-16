@@ -1,11 +1,9 @@
+import Hero from "../assets/img/Hero.png";
+
 const Header = () => {
   return (
     <section className="relative h-72">
-      <img
-        src="../assets/img/Hero.png"
-        alt=""
-        className="h-72 w-full object-cover"
-      />
+      <img src={Hero} alt="" className="h-72 w-full object-cover" />
 
       <div className="absolute inset-0 bg-black opacity-50 z-10" />
       <div className="absolute inset-0 flex items-center justify-center z-20">
