@@ -2,7 +2,7 @@ const Header = () => {
   return (
     <section className="relative h-72">
       <img
-        src="/src/assets/img/Hero image.png"
+        src="/src/assets/img/Heroimage.png"
         alt=""
         className="h-72 w-full object-cover"
       />
