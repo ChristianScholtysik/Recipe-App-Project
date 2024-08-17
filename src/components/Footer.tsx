@@ -15,40 +15,40 @@ const Footer = () => {
   const darkModeContext = useContext(DarkModeContext);
   return (
     <>
-      <section className="bg-primary flex pr-32 gap-40  text-tBase">
-        <div className="font-inter font-semibold text-xxl mt-16 p-24 flex items-center gap-6">
+      <section className="bg-primary flex pr-32 gap-40 items-center  text-tBase">
+        <div className="font-inter font-semibold text-xxl mt-16 p-24 flex items-center gap-6 tracking-wider">
           <div className="flex">
             {darkModeContext?.darkMode ? <LogoLight /> : <LogoDark />}
           </div>
           Die Rezeptwelt
         </div>
-        <div className="flex justify-center items-center flex-col">
-          <h3 className="font-inter font-semibold text-lg mb-6 mr-32">
+        <div className="flex justify-center items-center flex-col mt-24">
+          <h3 className="font-inter font-semibold text-xl mb-6 mr-32">
             Social Media
           </h3>
           <div className="flex gap-4">
-            <div className="p-4 bg-bgSocial rounded-xl w-16 h-16">
+            <div className="p-4 bg-bgSocial rounded-xl mb-16 flex justify-center items-center">
               {darkModeContext?.darkMode ? (
                 <SocialIcon1Light />
               ) : (
                 <SocialIcon1Dark />
               )}
             </div>
-            <div className="p-4 bg-bgSocial rounded-xl w-16 h-16">
+            <div className="p-4 bg-bgSocial rounded-xl mb-16 flex justify-center items-center">
               {darkModeContext?.darkMode ? (
                 <SocialIcon2Light />
               ) : (
                 <SocialIcon2Dark />
               )}
             </div>
-            <div className="p-4 bg-bgSocial rounded-xl w-16 h-16">
+            <div className="p-4 bg-bgSocial rounded-xl mb-16 flex justify-center items-center">
               {darkModeContext?.darkMode ? (
                 <SocialIcon3Light />
               ) : (
                 <SocialIcon3Dark />
               )}
             </div>
-            <div className="p-4 bg-bgSocial rounded-xl w-16 h-16">
+            <div className="p-4 bg-bgSocial rounded-xl w-14 h-14 flex justify-center items-center">
               {darkModeContext?.darkMode ? (
                 <SocialIcon4Light />
               ) : (

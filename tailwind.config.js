@@ -28,8 +28,8 @@ export default {
       },
       fontSize: {
         base: "1rem",
-        lg: "1.5rem",
-        xl: "1.8rem",
+        lg: "1.2rem",
+        xl: "1.5rem",
         xxl: "2.2rem",
         medium: "1.2rem",
       },

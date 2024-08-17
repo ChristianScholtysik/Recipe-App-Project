@@ -3,7 +3,7 @@ import Card from "./Card/Card";
 const Hero = () => {
   return (
     <>
-      <section className="flex flex-col justify-center items-center bg-bgMain h-screen gap-16">
+      <section className="flex flex-col justify-center items-center bg-bgMain h-screen gap-16 mb-24">
         <h2 className="font-inter font-bold text-xl text-tBase ">
           Die beliebtesten Rezepte
         </h2>

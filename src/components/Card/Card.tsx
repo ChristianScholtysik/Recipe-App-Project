@@ -3,7 +3,7 @@ import Button from "../Button/Button";
 const Card = () => {
   return (
     <section>
-      <div className=" h-80  ">
+      <div className=" h-80 ">
         <div className="rounded-t-large bg-secondary bg-card bg-cover bg-center h-48 "></div>
 
         <div className="bg-bgCard p-6 rounded-b-large h-64 flex flex-col ">
