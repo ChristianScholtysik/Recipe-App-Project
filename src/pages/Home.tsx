@@ -5,12 +5,12 @@ import NavBar from "../components/Navbar";
 
 const Home = () => {
   return (
-    <>
+    <section className="bg-bgMain">
       <NavBar />
       <Header />
       <Hero />
       <Footer />
-    </>
+    </section>
   );
 };
 
