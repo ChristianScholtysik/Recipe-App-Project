@@ -9,7 +9,7 @@ const NavBar = () => {
   const darkModeContext = useContext(DarkModeContext);
   return (
     <>
-      <section className="bg-primary h-32 pt-8 text-tBase">
+      <section className="bg-primary h-32 pt-9 text-tBase">
         <nav className="flex justify-around p-8 bg-bgMain">
           <div className="flex gap-6">
             {darkModeContext?.darkMode ? <LogoLight /> : <LogoDark />}
