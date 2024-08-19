@@ -4,6 +4,7 @@ import Sun from "../assets/Sun";
 import Moon from "../assets/Moon";
 import LogoLight from "../assets/LogoLight";
 import LogoDark from "../assets/LogoDark";
+import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
   const darkModeContext = useContext(DarkModeContext);
@@ -18,9 +19,15 @@ const NavBar = () => {
             </p>
           </div>
           <ul className="flex items-center gap-6 font-inter font-bold text-lg">
-            <li>Home</li>
-            <li>Rezepte</li>
-            <li>Über uns</li>
+            <li>
+              <NavLink to="/">Home</NavLink>
+            </li>
+            <li>
+              <NavLink to="/recipes">Rezepte</NavLink>
+            </li>
+            <li>
+              <NavLink to="/about">Über uns</NavLink>
+            </li>
             <div
               className="cursor-pointer "
               onClick={() =>

@@ -30,6 +30,7 @@ export default {
         base: "1rem",
         lg: "1.2rem",
         xl: "1.5rem",
+        xlarge: "1.7rem",
         xxl: "2.2rem",
         medium: "1.2rem",
       },
@@ -39,6 +40,7 @@ export default {
       backgroundImage: {
         card: "url('/src/assets/img/b6f0274ad086e513dfb256c9e159edc5.jpeg')",
         header: "url('/src/assets/img/Hero image.png')",
+        newestCard: "url('/src/assets/img/Featuredimage.png')",
       },
     },
   },
