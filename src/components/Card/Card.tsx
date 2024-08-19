@@ -16,7 +16,9 @@ const Card = ({ recipe }: CardProps) => {
         <div
           className="rounded-t-large bg-secondary bg-cover bg-center h-48 "
           style={{
-            backgroundImage: `url(${recipe.imageUrl || "/default-image.jpg"})`,
+            backgroundImage: `url(${
+              recipe.imageUrl || "../../assets/img/default-image.png"
+            })`,
           }}></div>
 
         <div className="bg-bgCard p-6 rounded-b-large h-64 flex flex-col ">
