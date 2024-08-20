@@ -2,10 +2,15 @@ import Button from "../Button/Button";
 
 type CardProps = {
   recipe: {
-    id: string;
-    name: string;
+    category_id: string;
+    created_at: string;
     description: string;
-    imageUrl?: string;
+    id: string;
+    imageUrl: string | null;
+    instructions: string;
+    name: string;
+    rating: number | null;
+    servings: string;
   };
 };
 

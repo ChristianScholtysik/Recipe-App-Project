@@ -60,21 +60,10 @@
 import { useEffect, useState } from "react";
 import Card from "./Card/Card";
 import supabaseClient from "../lib/supabaseClient";
-
-type Recipes = {
-  id: string;
-  name: string;
-  description: string;
-  servings: string;
-  instructions: string;
-  category_id: string;
-  created_at: Date;
-  imageUrl?: string;
-  rating?: number;
-};
+import { Recipe } from "../types/supabase-types.own";
 
 const Hero = () => {
-  const [bestRecipes, setBestRecipes] = useState<Recipes[]>([]);
+  const [bestRecipes, setBestRecipes] = useState<Recipe[]>([]);
 
   useEffect(() => {
     const fetchRecipes = async () => {

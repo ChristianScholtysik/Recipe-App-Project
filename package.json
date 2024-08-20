@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "gentypes": "npx supabase gen types --lang=typescript --project-id 'kiosnrptlfkzdjqxmixn' --schema public > src/types/supabase-types-gen.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.45.1",

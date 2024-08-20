@@ -52,23 +52,12 @@ import LogoLight from "../assets/LogoLight";
 import LogoDark from "../assets/LogoDark";
 import { Link, NavLink } from "react-router-dom";
 import supabaseClient from "../lib/supabaseClient";
-
-type Recipes = {
-  id: string;
-  name: string;
-  description: string;
-  servings: string;
-  instructions: string;
-  category_id: string;
-  created_at: Date;
-  imageUrl?: string;
-  rating?: number;
-};
+import { Recipe } from "../types/supabase-types.own";
 
 const NavBar = () => {
   const darkModeContext = useContext(DarkModeContext);
   const [searchInput, setSearchInput] = useState<string>("");
-  const [recipes, setRecipes] = useState<Recipes[]>([]);
+  const [recipes, setRecipes] = useState<Recipe[]>([]);
 
   console.log(recipes);
 
@@ -127,7 +116,7 @@ const NavBar = () => {
               {darkModeContext?.darkMode ? <Sun /> : <Moon />}
             </li>
           </ul>
-          <Link to="/search"></Link>
+          <Link to="{/search}"></Link>
           <div className="relative ">
             <input
               type="text"
