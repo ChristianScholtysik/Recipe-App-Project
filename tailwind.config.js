@@ -38,9 +38,14 @@ export default {
         large: "1rem",
       },
       backgroundImage: {
-        card: "url('/src/assets/img/b6f0274ad086e513dfb256c9e159edc5.jpeg')",
         header: "url('/src/assets/img/Hero image.png')",
-        newestCard: "url('/src/assets/img/Featuredimage.png')",
+      },
+      screens: {
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+        "2xl": "1536px",
       },
     },
   },
