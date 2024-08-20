@@ -44,7 +44,7 @@
 
 // export default NavBar;
 
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { DarkModeContext } from "../Context/DarkModeContext";
 import Sun from "../assets/Sun";
 import Moon from "../assets/Moon";
@@ -69,6 +69,8 @@ const NavBar = () => {
   const darkModeContext = useContext(DarkModeContext);
   const [searchInput, setSearchInput] = useState<string>("");
   const [recipes, setRecipes] = useState<Recipes[]>([]);
+
+  console.log(recipes);
 
   // useEffect(() => {
   const fetchRecipesBySearchTerm = async () => {
