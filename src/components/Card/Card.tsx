@@ -34,7 +34,7 @@ const Card = ({ recipe }: CardProps) => {
             {recipe.description}
           </p>
           <div className="mb-4 mt-4">
-            <Button />
+            <Button id={recipe.id} />
           </div>
         </div>
       </div>

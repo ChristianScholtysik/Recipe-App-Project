@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 
 type NewestCardProps = {
@@ -27,7 +28,7 @@ const NewestCard = ({ recipe }: NewestCardProps) => {
           {recipe.description}
         </p>
         <div className="mb-4 mt-8">
-          <Button />
+          <Button id={recipe.id} />
         </div>
       </div>
     </section>

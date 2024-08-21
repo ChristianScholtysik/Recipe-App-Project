@@ -63,9 +63,9 @@ const SingleRecipe = () => {
     .filter((step) => step.length > 0);
 
   return (
-    <section>
+    <section className="bg-bgMain">
       <NavBar />
-      <section className="relative h-80">
+      <section className="relative h-80 bg-bgMain">
         <img
           src={recipe.imageUrl?.toString() ?? ""}
           alt={recipe.name}
@@ -79,8 +79,8 @@ const SingleRecipe = () => {
           </p>
         </div>
       </section>
-      <section>
-        <h3>Zutaten</h3>
+      <section className=" bg-bgMain text-tBase ml-20 mt-10">
+        <h3 className="font-semibold mb-4">Zutaten</h3>
         <ul>
           {recipe.ingredients.map((ingredient) => (
             <li key={ingredient.id}>
@@ -92,17 +92,16 @@ const SingleRecipe = () => {
           ))}
         </ul>
       </section>
-      <section>
-        <h3>Zubereitung</h3>
-        <ol>
-          {" "}
+      <section className=" bg-bgMain text-tBase ml-20 mt-10">
+        <h3 className="font-semibold mb-4">Zubereitung</h3>
+        <ol className="mb-6">
           {instructionsList.map((step, index) => (
             <li key={index}>{step}</li>
           ))}
         </ol>
       </section>
-      <section>
-        <h3>Zusätzliche Informationen</h3>
+      <section className=" bg-bgMain text-tBase ml-20 mt-10">
+        <h3 className="font-semibold mb-4">Zusätzliche Informationen</h3>
         <p>{}</p>
       </section>
       <Footer />
