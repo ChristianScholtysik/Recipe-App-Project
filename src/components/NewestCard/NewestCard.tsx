@@ -5,11 +5,11 @@ type NewestCardProps = {
     id: string;
     name: string;
     description: string;
-    imageUrl?: string;
+    imageUrl?: string | null;
   };
 };
 
-const NewestCard = ({ recipe }: NewestCardProps) => {
+const NewestCard: React.FC<NewestCardProps> = ({ recipe }) => {
   return (
     <section className="flex w-11/12">
       <div
