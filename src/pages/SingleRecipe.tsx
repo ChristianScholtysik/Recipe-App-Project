@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import supabaseClient from "../lib/supabaseClient";
-import { RecipeComplete } from "../types/supabase-types.own";
+import { IRecipe } from "../types/supabase-types.own";
 import NavBar from "../components/Navbar";
 import Footer from "../components/Footer";
+import LoginStatus from "../components/LoginStatus";
 
 const SingleRecipe = () => {
   const { id } = useParams<{ id: string }>();
-  const [recipe, setRecipe] = useState<RecipeComplete | null>(null);
+  const [recipe, setRecipe] = useState<IRecipe | null>(null);
 
   useEffect(() => {
     const fetchSingleRecipe = async () => {
@@ -64,6 +65,7 @@ const SingleRecipe = () => {
 
   return (
     <section className="bg-bgMain">
+      <LoginStatus />
       <NavBar />
       <section className="relative h-80 bg-bgMain">
         <img

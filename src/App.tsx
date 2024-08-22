@@ -11,7 +11,7 @@ import SearchResultList from "./pages/SearchResultList";
 import SingleRecipe from "./pages/SingleRecipe";
 import LoginPage from "./pages/LoginPage";
 import { UserProvider } from "./Context/UserContext";
-import LoginStatus from "./components/LoginStatus";
+
 // import SingleRecipe from "./pages/SingleRecipe";
 
 function App() {
@@ -22,7 +22,6 @@ function App() {
         <BrowserRouter>
           <DarkModeContext.Provider value={{ darkMode, setDarkMode }}>
             <div className={darkMode ? "theme-dark" : ""}>
-              <LoginStatus />
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/recipes" element={<Recipes />} />
