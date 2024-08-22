@@ -1,3 +1,4 @@
+import AllRecipesSection from "../components/AllRecipesSection";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Hero from "../components/HeroSection";
@@ -14,6 +15,7 @@ const Recipes = () => {
         <Header />
         <Hero />
         <NewestRecipes />
+        <AllRecipesSection />
         <Footer />
       </section>
     </>
