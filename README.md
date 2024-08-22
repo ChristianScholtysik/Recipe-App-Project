@@ -3,6 +3,18 @@
 Welcome to the Recipe App! This is a web application built with React, TypeScript, Tailwind CSS, and Supabase. The app allows users to browse and view recipes, including detailed ingredient lists and preparation instructions.
 [Figma File:](https://www.figma.com/design/IrnliGaGibn1p1GD8Kj7Uo/Rezeptwelt?node-id=1-48&t=S5JXdYLtzLS8RX2K-0)
 
+## Screenshot
+
+Here’s a screenshot of the Home Page:
+
+![Home Page](./src/assets/img/Die-Rezeptwelt.png)
+
+## Netlify
+
+Here’s a preview of the App:
+
+![Die Rezeptwelt](https://recipe-app-project-tailwind.netlify.app/)
+
 ## Features
 
 - **Home Page**: Includes a hero section and an overview of the app's purpose.
@@ -71,12 +83,3 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 - [Supabase](https://supabase.io/) for providing a great BaaS platform.
 - [Vite](https://vitejs.dev/) for fast builds and hot module replacement.
 - [Tailwind CSS](https://tailwindcss.com/) for a great utility-first CSS framework.
-
-### Key Points:
-
-- **Features**: Describes what the app does.
-- **Project Structure**: Overview of how the project is organized.
-- **Tech Stack**: Lists the technologies used.
-- **Getting Started**: Instructions to set up the project locally.
-- **Contributing**: Encourages contributions.
-- **License**: Licensing information.
