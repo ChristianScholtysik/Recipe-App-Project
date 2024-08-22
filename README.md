@@ -1,51 +1,84 @@
-# React + TypeScript + Vite
+# Recipe App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the Recipe App! This is a web application built with React, TypeScript, Tailwind CSS, and Supabase. The app allows users to browse and view recipes, including detailed ingredient lists and preparation instructions.
+Figma File: [text](https://www.figma.com/design/IrnliGaGibn1p1GD8Kj7Uo/Rezeptwelt?node-id=1-48&t=S5JXdYLtzLS8RX2K-0)
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Home Page**: Includes a hero section and an overview of the app's purpose.
+- **Recipes Page**: Lists all available recipes with the ability to click on any recipe to view details.
+- **Single Recipe Page**: Displays detailed information about a selected recipe, including ingredients, instructions, and additional information.
+- **About Us Page**: Provides information about the team behind the app.
+- **Dark Mode**: Toggle between light and dark themes.
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+The project is structured as follows:
 
-- Configure the top-level `parserOptions` property like this:
+- `src/components/`: Contains reusable components like `Footer`, `Header`, `Hero`, and `NavBar`.
+- `src/pages/`: Contains the main pages of the app (`Home`, `AboutUs`, `Recipes`, `SearchResultList`, and `SingleRecipe`).
+- `src/Context/`: Contains the `DarkModeContext` for managing theme toggling.
+- `src/lib/`: Contains utility functions like `supabaseClient` for interacting with the Supabase backend.
+- `src/types/`: Contains TypeScript types generated from Supabase.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Tech Stack
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- **React**: Frontend library for building user interfaces.
+- **TypeScript**: For static typing.
+- **Tailwind CSS**: For utility-first CSS styling.
+- **Supabase**: Backend-as-a-Service providing a Postgres database and authentication.
+- **Vite**: Build tool for faster development and production builds.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Getting Started
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
-# Recipe-App-Project
+### Prerequisites
+
+Ensure you have the following installed:
+
+- Node.js (v14 or above)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+
+   git clone https://github.com/your-username/recipe-app.git
+   cd recipe-app
+
+2. Install dependencies:
+
+npm install
+
+# or
+
+yarn install
+
+3. Set up environment variables:
+   Create a .env file in the root directory and add your Supabase credentials:
+   VITE_SUPABASE_URL=your-supabase-url
+   VITE_SUPABASE_ANON_KEY=your-supabase-anon-key
+
+4. Start the development server:
+   npm run dev
+   # or
+   yarn dev
+   Open http://localhost:3000 to view the app.
+
+### License
+
+This project is licensed under the MIT License. See the LICENSE file for more details.
+
+### Acknowledgments
+
+[Supabase](https://supabase.io/) for providing a great BaaS platform.
+[Vite](https://vitejs.dev/) for fast builds and hot module replacement.
+[Tailwind CSS](https://tailwindcss.com/) for a great utility-first CSS framework.
+
+### Key Points:
+
+- **Features**: Describes what the app does.
+- **Project Structure**: Overview of how the project is organized.
+- **Tech Stack**: Lists the technologies used.
+- **Getting Started**: Instructions to set up the project locally.
+- **Contributing**: Encourages contributions.
+- **License**: Licensing information.
