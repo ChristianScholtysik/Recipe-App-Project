@@ -21,10 +21,10 @@ const LoginStatus = () => {
   };
 
   return (
-    <div className="login-status flex items-center justify-end space-x-4 p-4 bg-gray-100">
+    <div className="text-tBase  flex items-center justify-end space-x-4 p-4 bg-gray-100 dark:bg-bgMain ">
       {user ? (
         <div className="flex items-center space-x-2">
-          <span className="text-gray-800">Welcome, {user.email}</span>
+          <span className="text-tBase">Welcome, {user.email}</span>
           <img
             alt=""
             src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"

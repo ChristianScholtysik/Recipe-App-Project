@@ -1,11 +1,13 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import LoginStatus from "../components/LoginStatus";
 
 import NavBar from "../components/Navbar";
 
 const AboutUs = () => {
   return (
     <section className="bg-bgMain">
+      <LoginStatus />
       <NavBar />
       <Header />
       <div className="font-inter, font-regular, text-xlarge mr-32 ml-32 mb-20 mt-20 text-tBase">
