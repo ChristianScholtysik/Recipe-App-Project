@@ -11,9 +11,9 @@ Here’s a screenshot of the Home Page:
 
 ## Netlify
 
-Here’s a preview of the App:
+Here’s a live preview of the App:
 
-![Die Rezeptwelt](https://recipe-app-project-tailwind.netlify.app/)
+[Die Rezeptwelt](https://recipe-app-project-tailwind.netlify.app/)
 
 ## Features
 
