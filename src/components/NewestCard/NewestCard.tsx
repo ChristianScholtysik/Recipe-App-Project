@@ -1,3 +1,4 @@
+import { IRecipe } from "../../types/supabase-types.own";
 import Button from "../Button/Button";
 
 type NewestCardProps = {
@@ -7,9 +8,11 @@ type NewestCardProps = {
     description: string;
     imageUrl?: string | null;
   };
+  // recipe: IRecipe;
 };
 
 const NewestCard: React.FC<NewestCardProps> = ({ recipe }) => {
+  // console.log(recipe.categories?.name);
   return (
     <section className="flex w-11/12">
       <div
@@ -26,6 +29,8 @@ const NewestCard: React.FC<NewestCardProps> = ({ recipe }) => {
         <p className="font-inter font-regular text-base mb-8 mt-8 text-tBase">
           {recipe.description}
         </p>
+        {/* <p>{recipe.categories?.name}</p> */}
+
         <div className="mb-4 mt-8">
           <Button id={recipe.id} />
         </div>

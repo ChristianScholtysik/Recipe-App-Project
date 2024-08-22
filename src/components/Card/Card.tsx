@@ -33,6 +33,7 @@ const Card = ({ recipe }: CardProps) => {
           <p className="font-inter font-regular text-base mb-4 text-tBase line-clamp-2">
             {recipe.description}
           </p>
+          {/* <p>{recipe.category_id}</p> */}
           <div className="mb-4 mt-4">
             <Button id={recipe.id} />
           </div>
