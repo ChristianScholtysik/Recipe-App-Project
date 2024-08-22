@@ -9,6 +9,7 @@ import AboutUs from "./pages/AboutUs";
 import Recipes from "./pages/Recipes";
 import SearchResultList from "./pages/SearchResultList";
 import SingleRecipe from "./pages/SingleRecipe";
+import LoginPage from "./pages/LoginPage";
 // import SingleRecipe from "./pages/SingleRecipe";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
               <Route path="/about" element={<AboutUs />} />
               <Route path="/recipes/:id" element={<SingleRecipe />} />
               <Route path="/search" element={<SearchResultList />} />
+              <Route path="/login" element={<LoginPage />} />
             </Routes>
           </div>
         </DarkModeContext.Provider>
