@@ -46,27 +46,29 @@ const AllRecipesSection = () => {
   }, []);
 
   return (
-    <section className="relative flex flex-col items-center justify-center m-16 p-20 overflow-hidden h-80 rounded-large">
+    <section className="relative flex flex-col items-center justify-center m-4 md:m-8 lg:m-16 p-10 md:p-16 lg:p-20 overflow-hidden h-60 md:h-80 lg:h-96 rounded-large">
+      {/* Dark overlay */}
       <div className="absolute inset-0 bg-black opacity-60 z-10" />
 
-      <div className="absolute inset-0 grid grid-cols-8 grid-rows-2 gap-0 z-0 ">
+      {/* Recipe images grid */}
+      <div className="absolute inset-0 grid grid-cols-4 md:grid-cols-8 grid-rows-4 md:grid-rows-2 gap-0 z-0">
         {recipeImages.map((image, index) => (
           <div
             key={index}
-            className="bg-cover bg-center w-30 h-30 "
+            className="bg-cover bg-center w-full h-full"
             style={{
               backgroundImage: `url(${image})`,
-              aspectRatio: "1",
             }}
           />
         ))}
       </div>
 
-      <h2 className="relative z-10 font-inter font-bold text-xl text-white mb-16 ">
+      {/* Text and button */}
+      <h2 className="relative z-10 font-inter font-bold text-lg md:text-xl lg:text-2xl text-white mb-8 md:mb-12 lg:mb-16 text-center">
         Schau Dir alle Rezepte an und lass Dich inspirieren
       </h2>
       <button
-        className="relative z-10 bg-primary text-tBase py-3 px-8 rounded-full hover:bg-hover font-inter font-bold"
+        className="relative z-10 bg-primary text-tBase py-2 md:py-3 px-6 md:px-8 rounded-full hover:bg-hover font-inter font-bold text-sm md:text-base"
         onClick={() => navigate("/all-recipes")}>
         Zu den Rezepten
       </button>

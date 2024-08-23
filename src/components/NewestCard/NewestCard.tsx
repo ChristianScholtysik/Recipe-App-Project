@@ -1,4 +1,4 @@
-import { IRecipe } from "../../types/supabase-types.own";
+// import { IRecipe } from "../../types/supabase-types.own";
 import Button from "../Button/Button";
 
 type NewestCardProps = {
