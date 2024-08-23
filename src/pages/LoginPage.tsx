@@ -59,6 +59,10 @@ const LoginPage = () => {
     }
   };
 
+  const handleSignUp = () => {
+    navigate("/signup");
+  };
+
   return (
     <>
       <div className="flex items-center justify-center min-h-screen bg-gray-100 font-inter">
@@ -114,12 +118,20 @@ const LoginPage = () => {
             <div className="text-center mt-4">
               <button
                 type="button"
-                className="text-hover hover:underline"
+                className="text-tBase hover:underline"
                 onClick={handleResetPassword}>
                 Forgot Password?
               </button>
             </div>
           </form>
+          <div className="text-center mt-4">
+            <button
+              type="button"
+              className="text-hover font-semibold  w-full bg-pink-500 text-white py-3 rounded-lg font-semibold hover:bg-pink-400 transition duration-300"
+              onClick={handleSignUp}>
+              Don't have an account? Sign Up
+            </button>
+          </div>
         </div>
       </div>
     </>

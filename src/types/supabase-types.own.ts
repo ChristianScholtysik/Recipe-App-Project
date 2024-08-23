@@ -6,7 +6,7 @@ export type Categories = Tables<"categories">;
 
 export type RecipeComplete = Recipe & {
   ingredients: Ingredients[];
-  category: Categories[];
+  category: Categories;
 };
 
 export interface IIngredient {

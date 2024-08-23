@@ -21,7 +21,7 @@ const LoginStatus = () => {
   };
 
   return (
-    <div className="text-tBase flex items-center justify-end space-x-4 p-4 bg-gray-100 dark:bg-bgMain">
+    <div className="text-tBase flex items-center justify-end space-x-4 p-4 bg-gray-100 dark:bg-bgMain sticky">
       {user ? (
         <div className="relative flex items-center space-x-2">
           <span className="text-tBase">Welcome, {user.email}</span>
