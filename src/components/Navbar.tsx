@@ -47,7 +47,6 @@ const NavBar = () => {
           <button
             className="md:hidden text-tBase focus:outline-none"
             onClick={() => setMenuOpen(!menuOpen)}>
-            {/* Burger Icon */}
             <div className="space-y-2">
               <span className="block w-8 h-0.5 bg-tBase"></span>
               <span className="block w-8 h-0.5 bg-tBase"></span>

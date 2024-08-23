@@ -14,6 +14,7 @@ import { UserProvider } from "./Context/UserContext";
 import ResultPage from "./pages/ResultPage";
 import { SearchResultsProvider } from "./Context/SearchResultsContext";
 import AllRecipesPage from "./pages/AllRecipesPage";
+import MyProfile from "./components/My Profil/MyProfil";
 
 // import SingleRecipe from "./pages/SingleRecipe";
 
@@ -34,6 +35,7 @@ function App() {
                   <Route path="/all-recipes" element={<AllRecipesPage />} />
                   <Route path="/results" element={<ResultPage />} />
                   <Route path="/login" element={<LoginPage />} />
+                  <Route path="/profile" element={<MyProfile />} />
                 </Routes>
               </div>
             </DarkModeContext.Provider>

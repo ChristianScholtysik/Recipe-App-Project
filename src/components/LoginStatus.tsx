@@ -21,15 +21,23 @@ const LoginStatus = () => {
   };
 
   return (
-    <div className="text-tBase  flex items-center justify-end space-x-4 p-4 bg-gray-100 dark:bg-bgMain ">
+    <div className="text-tBase flex items-center justify-end space-x-4 p-4 bg-gray-100 dark:bg-bgMain">
       {user ? (
-        <div className="flex items-center space-x-2">
+        <div className="relative flex items-center space-x-2">
           <span className="text-tBase">Welcome, {user.email}</span>
-          <img
-            alt=""
-            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-            className="inline-block h-10 w-10 rounded-full ring-2 ring-white"
-          />
+          <Link to="/profile">
+            <div className="relative group">
+              <img
+                alt="User Avatar"
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                className="inline-block h-10 w-10 rounded-full ring-2 ring-white cursor-pointer"
+              />
+              {/* Custom Tooltip */}
+              <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-amber-600 text-white text-xs rounded py-1 px-2 whitespace-no-wrap z-50">
+                Go to profile
+              </div>
+            </div>
+          </Link>
           <button
             className="logout-button px-4 py-2 bg-primary text-white rounded hover:bg-hover transition"
             onClick={handleLogoutClicked}>
@@ -38,7 +46,7 @@ const LoginStatus = () => {
         </div>
       ) : (
         <Link to="/login">
-          <button className="login-button px-4 py-2 bg-hover text-white rounded hover:bg-primary hover:text-black^ transition">
+          <button className="login-button px-4 py-2 bg-hover text-white rounded hover:bg-primary hover:text-black transition">
             Login
           </button>
         </Link>
