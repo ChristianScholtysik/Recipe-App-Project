@@ -15,7 +15,7 @@ type CardProps = {
     name: string;
     rating: number | null;
     servings: string;
-    categories: string[];
+    // categories: string[];
   };
   // categories: string;
 
