@@ -1,3 +1,4 @@
+import { useProfileData } from "../Context/ProfileContext";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import LoginStatus from "../components/LoginStatus";
@@ -5,18 +6,22 @@ import LoginStatus from "../components/LoginStatus";
 import NavBar from "../components/Navbar";
 
 const AboutUs = () => {
+  const profileContext = useProfileData();
+  const profile = profileContext.profile;
+
   return (
     <section className="bg-bgMain">
       <LoginStatus />
       <NavBar />
       <Header />
       <div className="font-inter, font-regular, text-xlarge mr-32 ml-32 mb-20 mt-20 text-tBase">
-        Hallo, wir sind Amanda und Pedro und freuen uns, unsere Arbeit auf
-        Rezeptwelt vorstellen zu können. Bei der Erkundung dieser erstaunlichen
-        Website haben wir ein gastronomisches Universum voller köstlicher
-        Rezepte, nützlicher Tipps und kulinarischer Inspiration entdeckt.
-        Rezeptwelt ist ein Ort, an dem sich erfahrene Köche und Kochanfänger in
-        ihrer Leidenschaft für das Essen vereinen können.
+        Hallo {profile?.first_name}, wir sind Amanda und Pedro und freuen uns,
+        unsere Arbeit auf Rezeptwelt vorstellen zu können. Bei der Erkundung
+        dieser erstaunlichen Website haben wir ein gastronomisches Universum
+        voller köstlicher Rezepte, nützlicher Tipps und kulinarischer
+        Inspiration entdeckt. Rezeptwelt ist ein Ort, an dem sich erfahrene
+        Köche und Kochanfänger in ihrer Leidenschaft für das Essen vereinen
+        können.
         <br />
         <br />
         Was uns besonders begeistert hat, war die Vielfalt der Rezepte. Von

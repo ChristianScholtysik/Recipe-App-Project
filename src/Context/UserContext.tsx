@@ -5,11 +5,13 @@ import supabaseClient from "../lib/supabaseClient";
 interface IUserContext {
   user: User | null;
   setUser: React.Dispatch<React.SetStateAction<User | null>>;
+  loading: boolean;
 }
 const UserContext = createContext<IUserContext | null>(null);
 
 export const UserProvider = ({ children }: { children: React.ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchSession = async () => {
@@ -21,13 +23,14 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
       if (sessionResponse.data.session) {
         setUser(sessionResponse.data.session.user);
       }
+      setLoading(false);
     };
 
     fetchSession();
   }, []);
 
   return (
-    <UserContext.Provider value={{ user, setUser }}>
+    <UserContext.Provider value={{ user, setUser, loading }}>
       {children}
     </UserContext.Provider>
   );

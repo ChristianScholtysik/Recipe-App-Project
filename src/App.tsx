@@ -19,10 +19,12 @@ import PrivateRoute from "./components/PrivateRoute";
 import SignUpPage from "./pages/SignUpPage";
 import { ProfileProvider } from "./Context/ProfileContext";
 
-// import SingleRecipe from "./pages/SingleRecipe";
+import MyRecipes from "./pages/MyRecipes";
+import { FavoriteContext } from "./Context/FavoriteContext";
 
 function App() {
   const [darkMode, setDarkMode] = useState<boolean>(false);
+  const [isFavorite, setIsFavorite] = useState<boolean>(false);
   return (
     <>
       <UserProvider>
@@ -30,21 +32,27 @@ function App() {
           <SearchResultsProvider>
             <BrowserRouter>
               <DarkModeContext.Provider value={{ darkMode, setDarkMode }}>
-                <div className={darkMode ? "theme-dark" : ""}>
-                  <Routes>
-                    <Route path="/login" element={<LoginPage />} />
-                    <Route path="/signup" element={<SignUpPage />} />
-                    <Route element={<PrivateRoute />}>
-                      <Route path="/" element={<Home />} />
-                      <Route path="/recipes" element={<Recipes />} />
-                      <Route path="/about" element={<AboutUs />} />
-                      <Route path="/recipes/:id" element={<SingleRecipe />} />
-                      <Route path="/all-recipes" element={<AllRecipesPage />} />
-                      <Route path="/results" element={<ResultPage />} />
-                      <Route path="/profile" element={<MyProfile />} />
-                    </Route>
-                  </Routes>
-                </div>
+                <FavoriteContext.Provider value={{ isFavorite, setIsFavorite }}>
+                  <div className={darkMode ? "theme-dark" : ""}>
+                    <Routes>
+                      <Route path="/login" element={<LoginPage />} />
+                      <Route path="/signup" element={<SignUpPage />} />
+                      <Route element={<PrivateRoute />}>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/recipes" element={<Recipes />} />
+                        <Route path="/about" element={<AboutUs />} />
+                        <Route path="/recipes/:id" element={<SingleRecipe />} />
+                        <Route
+                          path="/all-recipes"
+                          element={<AllRecipesPage />}
+                        />
+                        <Route path="/my-recipes" element={<MyRecipes />} />
+                        <Route path="/results" element={<ResultPage />} />
+                        <Route path="/profile" element={<MyProfile />} />
+                      </Route>
+                    </Routes>
+                  </div>
+                </FavoriteContext.Provider>
               </DarkModeContext.Provider>
             </BrowserRouter>
           </SearchResultsProvider>

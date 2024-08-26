@@ -1,5 +1,9 @@
 // import { IRecipe } from "../../types/supabase-types.own";
+import { useContext } from "react";
 import Button from "../Button/Button";
+import { FavoriteContext } from "../../Context/FavoriteContext";
+import Favorite_clicked from "../../assets/icons/Favorite_clicked";
+import Favorite from "../../assets/icons/Favorite";
 
 type NewestCardProps = {
   recipe: {
@@ -7,11 +11,14 @@ type NewestCardProps = {
     name: string;
     description: string;
     imageUrl?: string | null;
+    rating: number | null;
   };
   // recipe: IRecipe;
 };
 
 const NewestCard: React.FC<NewestCardProps> = ({ recipe }) => {
+  const favoriteContext = useContext(FavoriteContext);
+  const isFavorite = favoriteContext?.isFavorite;
   // console.log(recipe.categories?.name);
   return (
     <section className="flex w-11/12">
@@ -34,6 +41,14 @@ const NewestCard: React.FC<NewestCardProps> = ({ recipe }) => {
         <div className="mb-4 mt-8">
           <Button id={recipe.id} />
         </div>
+        <section className="flex justify-between">
+          <p className="text-tBase text-small text-left h-6 w-6 flex items-center">
+            {isFavorite ? <Favorite_clicked /> : <Favorite />}
+          </p>
+          <p className="text-tBase text-small text-right">
+            Rating: {recipe.rating}/5 ⭐️
+          </p>
+        </section>
       </div>
     </section>
   );

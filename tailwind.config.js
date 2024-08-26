@@ -27,6 +27,7 @@ export default {
         bold: 700,
       },
       fontSize: {
+        small: "0.8rem",
         base: "1rem",
         lg: "1.2rem",
         xl: "1.5rem",

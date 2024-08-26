@@ -83,6 +83,14 @@ const NavBar = () => {
                 Über uns
               </NavLink>
             </li>
+            <li>
+              <NavLink
+                to="/my-recipes"
+                className="hover:text-primary transition-colors"
+                onClick={() => setMenuOpen(false)}>
+                Meine Rezepte
+              </NavLink>
+            </li>
             <li
               className="cursor-pointer"
               onClick={() => {

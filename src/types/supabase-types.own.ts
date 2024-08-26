@@ -34,6 +34,12 @@ export interface IRecipe {
   created_at: string;
 }
 
+// export interface ICategories {
+//   id: string;
+//   name: string;
+//   created_at: string;
+// }
+
 // export type RecipeComplete = {
 //   recipe: Recipe;
 //   category: Categories;

@@ -4,6 +4,11 @@ import { useUserContext } from "../Context/UserContext";
 const PrivateRoute = () => {
   const userContext = useUserContext();
   const user = userContext?.user;
+  const loading = userContext?.loading;
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
   return user ? <Outlet /> : <Navigate to="/login" />;
 };
 

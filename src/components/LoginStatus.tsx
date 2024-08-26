@@ -46,10 +46,10 @@ const LoginStatus = () => {
   }, [user, setProfile]);
 
   return (
-    <div className="text-tBase flex items-center justify-end space-x-4 p-4 bg-gray-100 dark:bg-bgMain sticky top-0 z-20">
+    <div className="text-tBase flex items-center justify-end space-x-4 p-4 bg-gray-100 dark:bg-bgMain sticky top-0 z-40">
       {user ? (
         <div className="relative flex items-center space-x-2">
-          <span className="text-tBase">Welcome, {profile?.first_name}</span>
+          <span className="text-tBase">Willkommen, {profile?.first_name}</span>
           <Link to="/profile">
             <div className="relative group">
               <img
