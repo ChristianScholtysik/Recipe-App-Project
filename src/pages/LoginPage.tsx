@@ -73,6 +73,12 @@ const LoginPage = () => {
           <h2 className="text-2xl font-bold mb-6 text-gray-800 text-center">
             Login
           </h2>
+          <div className="flex mb-4 text-small text-gray-600">
+            <ul>
+              <li>Email: christiansupercode@gmail.com </li>
+              <li>PW: 1234</li>
+            </ul>
+          </div>
           <form onSubmit={handleLogin}>
             <div className="mb-4">
               <label

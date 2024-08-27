@@ -4,6 +4,8 @@ import Button from "../Button/Button";
 import { FavoriteContext } from "../../Context/FavoriteContext";
 import Favorite_clicked from "../../assets/icons/Favorite_clicked";
 import Favorite from "../../assets/icons/Favorite";
+import { DarkModeContext } from "../../Context/DarkModeContext";
+import FavoriteDark from "../../assets/icons/FavoriteDark";
 
 type NewestCardProps = {
   recipe: {
@@ -19,6 +21,7 @@ type NewestCardProps = {
 const NewestCard: React.FC<NewestCardProps> = ({ recipe }) => {
   const favoriteContext = useContext(FavoriteContext);
   const isFavorite = favoriteContext?.isFavorite;
+  const darkModeContext = useContext(DarkModeContext);
   // console.log(recipe.categories?.name);
   return (
     <section className="flex w-11/12">
@@ -43,7 +46,13 @@ const NewestCard: React.FC<NewestCardProps> = ({ recipe }) => {
         </div>
         <section className="flex justify-between">
           <p className="text-tBase text-small text-left h-6 w-6 flex items-center">
-            {isFavorite ? <Favorite_clicked /> : <Favorite />}
+            {isFavorite ? (
+              <Favorite_clicked />
+            ) : darkModeContext?.darkMode ? (
+              <FavoriteDark />
+            ) : (
+              <Favorite />
+            )}
           </p>
           <p className="text-tBase text-small text-right">
             Rating: {recipe.rating}/5 ⭐️

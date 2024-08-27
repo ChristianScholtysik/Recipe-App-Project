@@ -183,7 +183,7 @@
 
 // export default SingleRecipe;
 
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import supabaseClient from "../lib/supabaseClient";
 import { IRecipe } from "../types/supabase-types.own";
@@ -193,13 +193,12 @@ import LoginStatus from "../components/LoginStatus";
 import Favorite from "../assets/icons/Favorite";
 import Favorite_clicked from "../assets/icons/Favorite_clicked";
 import { useUserContext } from "../Context/UserContext";
-import { FavoriteContext } from "../Context/FavoriteContext";
 
 const SingleRecipe = () => {
   const { id } = useParams<{ id: string }>();
   const [recipe, setRecipe] = useState<IRecipe | null>(null);
-  // const [isFavorite, setIsFavorite] = useState<boolean>(false);
-  const favoriteContext = useContext(FavoriteContext);
+  const [isFavorite, setIsFavorite] = useState<boolean>(false);
+  // const favoriteContext = useContext(FavoriteContext);
   const userContext = useUserContext();
   const user = userContext?.user;
 
@@ -246,7 +245,7 @@ const SingleRecipe = () => {
         if (favoriteError) {
           console.error("Error checking favorite status:", favoriteError);
         } else {
-          favoriteContext?.setIsFavorite(!!favoriteData);
+          setIsFavorite(!!favoriteData);
         }
       }
     };
@@ -256,7 +255,7 @@ const SingleRecipe = () => {
 
   const toggleFavorite = async () => {
     if (user && recipe) {
-      if (favoriteContext?.isFavorite) {
+      if (isFavorite) {
         const { error } = await supabaseClient
           .from("recipe_favorites")
           .delete()
@@ -266,7 +265,7 @@ const SingleRecipe = () => {
         if (error) {
           console.error("Error removing from favorites:", error);
         } else {
-          favoriteContext.setIsFavorite(false);
+          setIsFavorite(false);
         }
       } else {
         const { error } = await supabaseClient
@@ -276,7 +275,7 @@ const SingleRecipe = () => {
         if (error) {
           console.error("Error adding to favorites:", error);
         } else {
-          favoriteContext?.setIsFavorite(true);
+          setIsFavorite(true);
         }
       }
     }
@@ -295,6 +294,7 @@ const SingleRecipe = () => {
     <section className="bg-bgMain">
       <LoginStatus />
       <NavBar />
+
       <section className="relative h-80 bg-bgMain">
         <img
           src={recipe.imageUrl ?? ""}
@@ -336,7 +336,7 @@ const SingleRecipe = () => {
       <div
         className="flex flex-col items-center justify-center bg-bgMain text-tBase ml-20 mt-10 mb-10 cursor-pointer h-28"
         onClick={toggleFavorite}>
-        {favoriteContext?.isFavorite ? (
+        {isFavorite ? (
           <>
             Auf deiner Favoritenliste ! <Favorite_clicked />
           </>

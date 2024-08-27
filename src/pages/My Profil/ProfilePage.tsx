@@ -16,11 +16,11 @@ const ProfilePage = () => {
     return <p>Loading...</p>;
   }
   return (
-    <>
+    <div className="bg-bgMain">
       <LoginStatus />
 
-      <section className="flex justify-center items-center mt-20 text-tBase">
-        <div className="profile-overview p-6 bg-primary rounded-lg shadow-md  ">
+      <section className="flex justify-center items-center text-tBase bg-bgMain h-full">
+        <div className="profile-overview p-6 bg-primary rounded-lg shadow-md h-full ">
           <h1 className="text-2xl font-bold mb-4">Profile Overview</h1>
           <div className="profile-details">
             <p className="text-lg mb-2">
@@ -51,7 +51,7 @@ const ProfilePage = () => {
           </button>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 
