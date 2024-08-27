@@ -33,7 +33,12 @@ const Hero = () => {
       <div className="w-full max-w-screen-lg">
         <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12">
           {bestRecipes.map((recipe) => (
-            <Card key={recipe.id} recipe={recipe} />
+            <Card
+              key={recipe.id}
+              recipe={recipe}
+              // isFavorite={isFavorite}
+              // toggleFavorite={toggleFavorite}
+            />
           ))}
         </div>
       </div>

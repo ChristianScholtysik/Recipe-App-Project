@@ -5,7 +5,6 @@ import { Recipe } from "../types/supabase-types.own";
 import NewestCard from "../components/NewestCard/NewestCard";
 import LoginStatus from "../components/LoginStatus";
 import NavBar from "../components/Navbar";
-import { useNavigate } from "react-router-dom";
 
 interface RecipeFavorite {
   id: string;
@@ -14,11 +13,11 @@ interface RecipeFavorite {
 }
 
 const MyRecipes = () => {
-  const [favorites, setFavorites] = useState<RecipeFavorite[]>([]);
+  const [_favorites, setFavorites] = useState<RecipeFavorite[]>([]);
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   const userContext = useUserContext();
   const user = userContext?.user;
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   useEffect(() => {
     const fetchFavorites = async () => {

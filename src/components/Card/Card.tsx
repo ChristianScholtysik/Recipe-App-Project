@@ -4,6 +4,7 @@ import Favorite from "../../assets/icons/Favorite";
 import FavoriteDark from "../../assets/icons/FavoriteDark";
 import Favorite_clicked from "../../assets/icons/Favorite_clicked";
 import Button from "../Button/Button";
+import { FavoriteContext } from "../../Context/FavoriteContext";
 
 type CardProps = {
   recipe: {
@@ -19,11 +20,13 @@ type CardProps = {
     // categories: string[];
   };
   // categories: string;
-  isFavorite: boolean;
-  toggleFavorite: (id: string) => void;
+  // isFavorite: boolean;
+  // toggleFavorite: (id: string) => void;
 };
 
-const Card = ({ recipe, isFavorite, toggleFavorite }: CardProps) => {
+const Card = ({ recipe }: CardProps) => {
+  const favoriteContext = useContext(FavoriteContext);
+  const isFavorite = favoriteContext?.isFavorite;
   const darkModeContext = useContext(DarkModeContext);
   return (
     <section className="w-72">
@@ -50,7 +53,8 @@ const Card = ({ recipe, isFavorite, toggleFavorite }: CardProps) => {
           <section className="flex justify-between">
             <p
               className="text-tBase text-small text-left h-6 w-6 flex items-center cursor-pointer"
-              onClick={() => toggleFavorite(recipe.id)}>
+              // onClick={() => toggleFavorite(recipe.id)}
+            >
               {isFavorite ? (
                 <Favorite_clicked />
               ) : darkModeContext?.darkMode ? (
