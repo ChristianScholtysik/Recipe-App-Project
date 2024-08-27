@@ -36,7 +36,7 @@ const Hero = () => {
             <Card
               key={recipe.id}
               recipe={recipe}
-              // isFavorite={isFavorite}
+              //isFavorite={isFavorite}
               // toggleFavorite={toggleFavorite}
             />
           ))}

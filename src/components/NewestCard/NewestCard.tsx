@@ -1,11 +1,10 @@
-// import { IRecipe } from "../../types/supabase-types.own";
 import { useContext } from "react";
+import { DarkModeContext } from "../../Context/DarkModeContext";
+import Favorite from "../../assets/icons/Favorite";
+import FavoriteDark from "../../assets/icons/FavoriteDark";
+import Favorite_clicked from "../../assets/icons/Favorite_clicked";
 import Button from "../Button/Button";
 import { FavoriteContext } from "../../Context/FavoriteContext";
-import Favorite_clicked from "../../assets/icons/Favorite_clicked";
-import Favorite from "../../assets/icons/Favorite";
-import { DarkModeContext } from "../../Context/DarkModeContext";
-import FavoriteDark from "../../assets/icons/FavoriteDark";
 
 type NewestCardProps = {
   recipe: {
@@ -15,14 +14,19 @@ type NewestCardProps = {
     imageUrl?: string | null;
     rating: number | null;
   };
-  // recipe: IRecipe;
 };
 
 const NewestCard: React.FC<NewestCardProps> = ({ recipe }) => {
   const favoriteContext = useContext(FavoriteContext);
-  const isFavorite = favoriteContext?.isFavorite;
   const darkModeContext = useContext(DarkModeContext);
-  // console.log(recipe.categories?.name);
+
+  if (!favoriteContext) {
+    return null;
+  }
+
+  const { favorites, toggleFavorite } = favoriteContext;
+  const isFavorite = favorites.includes(recipe.id);
+
   return (
     <section className="flex w-11/12">
       <div
@@ -39,13 +43,14 @@ const NewestCard: React.FC<NewestCardProps> = ({ recipe }) => {
         <p className="font-inter font-regular text-base mb-8 mt-8 text-tBase">
           {recipe.description}
         </p>
-        {/* <p>{recipe.categories?.name}</p> */}
 
         <div className="mb-4 mt-8">
           <Button id={recipe.id} />
         </div>
         <section className="flex justify-between">
-          <p className="text-tBase text-small text-left h-6 w-6 flex items-center">
+          <p
+            className="text-tBase text-small text-left h-6 w-6 flex items-center cursor-pointer"
+            onClick={() => toggleFavorite(recipe.id)}>
             {isFavorite ? (
               <Favorite_clicked />
             ) : darkModeContext?.darkMode ? (

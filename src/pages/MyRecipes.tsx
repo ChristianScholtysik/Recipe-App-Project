@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import supabaseClient from "../lib/supabaseClient";
 import { useUserContext } from "../Context/UserContext";
 import { Recipe } from "../types/supabase-types.own";
 import NewestCard from "../components/NewestCard/NewestCard";
 import LoginStatus from "../components/LoginStatus";
 import NavBar from "../components/Navbar";
+import { FavoriteContext } from "../Context/FavoriteContext";
 
 interface RecipeFavorite {
   id: string;
@@ -13,11 +14,14 @@ interface RecipeFavorite {
 }
 
 const MyRecipes = () => {
-  const [_favorites, setFavorites] = useState<RecipeFavorite[]>([]);
+  const [favorite, setFavorite] = useState<RecipeFavorite[]>([]);
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   const userContext = useUserContext();
   const user = userContext?.user;
+  const favoriteContext = useContext(FavoriteContext);
   // const navigate = useNavigate();
+
+  console.log(favorite);
 
   useEffect(() => {
     const fetchFavorites = async () => {
@@ -33,7 +37,7 @@ const MyRecipes = () => {
         return;
       }
 
-      setFavorites(favoriteData);
+      setFavorite(favoriteData);
 
       if (favoriteData) {
         const recipeIds = favoriteData.map((fav) => fav.recipe_id);

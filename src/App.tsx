@@ -20,11 +20,11 @@ import SignUpPage from "./pages/SignUpPage";
 import { ProfileProvider } from "./Context/ProfileContext";
 
 import MyRecipes from "./pages/MyRecipes";
-import { FavoriteContext } from "./Context/FavoriteContext";
+import { FavoriteContext, FavoriteProvider } from "./Context/FavoriteContext";
 
 function App() {
   const [darkMode, setDarkMode] = useState<boolean>(false);
-  const [isFavorite, setIsFavorite] = useState<boolean>(false);
+  // const [isFavorite, setIsFavorite, toggleFavorite] = useState<boolean>(false);
   return (
     <>
       <UserProvider>
@@ -32,7 +32,7 @@ function App() {
           <SearchResultsProvider>
             <BrowserRouter>
               <DarkModeContext.Provider value={{ darkMode, setDarkMode }}>
-                <FavoriteContext.Provider value={{ isFavorite, setIsFavorite }}>
+                <FavoriteProvider>
                   <div className={darkMode ? "theme-dark" : ""}>
                     <Routes>
                       <Route path="/login" element={<LoginPage />} />
@@ -52,7 +52,7 @@ function App() {
                       </Route>
                     </Routes>
                   </div>
-                </FavoriteContext.Provider>
+                </FavoriteProvider>
               </DarkModeContext.Provider>
             </BrowserRouter>
           </SearchResultsProvider>

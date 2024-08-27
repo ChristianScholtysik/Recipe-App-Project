@@ -17,17 +17,21 @@ type CardProps = {
     name: string;
     rating: number | null;
     servings: string;
-    // categories: string[];
   };
-  // categories: string;
-  // isFavorite: boolean;
-  // toggleFavorite: (id: string) => void;
 };
 
 const Card = ({ recipe }: CardProps) => {
-  const favoriteContext = useContext(FavoriteContext);
-  const isFavorite = favoriteContext?.isFavorite;
   const darkModeContext = useContext(DarkModeContext);
+  const favoriteContext = useContext(FavoriteContext);
+
+  if (!favoriteContext) {
+    // Handle the case where the context is not available
+    return null;
+  }
+
+  const { favorites, toggleFavorite } = favoriteContext;
+  const isFavorited = favorites.includes(recipe.id);
+
   return (
     <section className="w-72">
       <div className="">
@@ -53,9 +57,8 @@ const Card = ({ recipe }: CardProps) => {
           <section className="flex justify-between">
             <p
               className="text-tBase text-small text-left h-6 w-6 flex items-center cursor-pointer"
-              // onClick={() => toggleFavorite(recipe.id)}
-            >
-              {isFavorite ? (
+              onClick={() => toggleFavorite(recipe.id)}>
+              {isFavorited ? (
                 <Favorite_clicked />
               ) : darkModeContext?.darkMode ? (
                 <FavoriteDark />
