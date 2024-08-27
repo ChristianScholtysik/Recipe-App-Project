@@ -21,6 +21,7 @@ const MyRecipes = () => {
   const favoriteContext = useContext(FavoriteContext);
   // const navigate = useNavigate();
 
+  console.log(favoriteContext);
   console.log(favorite);
 
   useEffect(() => {
