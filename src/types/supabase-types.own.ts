@@ -11,6 +11,11 @@ export type RecipeComplete = Recipe & {
   category: Categories;
 };
 
+export type RecipeWithFavorite = Recipe & {
+  ingredients: Ingredients[];
+  recipe_favorites: { recipe_id: string }[];
+};
+
 export interface IIngredient {
   id: string;
   name: string;

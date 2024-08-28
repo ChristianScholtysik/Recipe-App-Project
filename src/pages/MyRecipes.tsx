@@ -18,10 +18,10 @@ const MyRecipes = () => {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   const userContext = useUserContext();
   const user = userContext?.user;
-  const favoriteContext = useContext(FavoriteContext);
+  // const favoriteContext = useContext(FavoriteContext);
   // const navigate = useNavigate();
 
-  console.log(favoriteContext);
+  // console.log(favoriteContext?.favorites);
   console.log(favorite);
 
   useEffect(() => {
@@ -60,7 +60,7 @@ const MyRecipes = () => {
   }, [user]);
 
   return (
-    <div className="bg-bgMain">
+    <div className="bg-bgMain h-screen">
       <LoginStatus />
       <NavBar />
       <section className="flex flex-col justify-center items-center bg-bgMain">

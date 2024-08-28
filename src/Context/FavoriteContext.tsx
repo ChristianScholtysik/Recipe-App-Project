@@ -92,6 +92,7 @@ export const FavoriteProvider: React.FC<{ children: React.ReactNode }> = ({
           prevFavorites.filter((favId) => favId !== id)
         );
       }
+      console.log(favorites);
     }
   };
 
