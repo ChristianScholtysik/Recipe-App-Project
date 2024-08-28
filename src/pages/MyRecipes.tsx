@@ -5,6 +5,7 @@ import { Recipe } from "../types/supabase-types.own";
 import NewestCard from "../components/NewestCard/NewestCard";
 import LoginStatus from "../components/LoginStatus";
 import NavBar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 interface RecipeFavorite {
   id: string;
@@ -77,6 +78,7 @@ const MyRecipes = () => {
           ))}
         </div>
       </section>
+      <Footer />
     </div>
   );
 };

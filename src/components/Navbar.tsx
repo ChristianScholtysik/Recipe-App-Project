@@ -38,12 +38,14 @@ const NavBar = () => {
           menuOpen ? "relative z-50" : ""
         }`}>
         <div className="flex justify-between items-center w-full md:w-auto">
-          <div className="flex items-center gap-6">
-            {darkModeContext?.darkMode ? <LogoLight /> : <LogoDark />}
-            <p className="font-inter font-medium text-lg md:text-xl lg:text-2xl w-full text-center md:text-left">
-              Die Rezeptwelt
-            </p>
-          </div>
+          <NavLink to="/">
+            <div className="flex items-center gap-6">
+              {darkModeContext?.darkMode ? <LogoLight /> : <LogoDark />}
+              <p className="font-inter font-medium text-lg md:text-xl lg:text-2xl w-full text-center md:text-left">
+                Die Rezeptwelt
+              </p>
+            </div>
+          </NavLink>
           <button
             className="md:hidden text-tBase focus:outline-none"
             onClick={() => setMenuOpen(!menuOpen)}>

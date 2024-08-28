@@ -181,6 +181,7 @@ import { useUserContext } from "../../Context/UserContext";
 import LoginStatus from "../../components/LoginStatus";
 import supabaseClient from "../../lib/supabaseClient";
 import { useEffect, useState } from "react";
+import NavBar from "../../components/Navbar";
 
 const ProfilePage = () => {
   const { profile, setProfile } = useProfileData();
@@ -265,15 +266,16 @@ const ProfilePage = () => {
   }
 
   return (
-    <div className="bg-bgMain min-h-screen flex flex-col p-4">
+    <div className="bg-bgMain min-h-screen flex flex-col p-4 text-tBase">
       <LoginStatus />
+
       <div className="flex flex-col p-4 items-center p-4">
         <section className="w-full max-w-3xl p-6 bg-primary rounded-lg shadow-md">
-          <h1 className="text-3xl font-bold mb-6 text-center">
+          <h1 className="text-3xl font-bold mb-6 text-center text-tBase">
             Profile Overview
           </h1>
 
-          <div className="profile-details space-y-4 mb-6">
+          <div className="profile-details space-y-4 mb-6 ">
             <p className="text-lg">
               <strong>First Name:</strong> {profile.first_name} "
               {profile.nickName}"
@@ -313,7 +315,7 @@ const ProfilePage = () => {
                 No image
               </div>
             )}
-            <label className="mt-4 mb-2 text-base font-medium">
+            <label className="mt-4 mb-2 text-base font-medium ">
               <strong>Upload Image</strong>
             </label>
             <input
@@ -324,7 +326,7 @@ const ProfilePage = () => {
                   setAvatarFile(e.target.files[0]);
                 }
               }}
-              className="mt-2 mb-4 text-sm"
+              className="mt-2 mb-4 text-sm "
             />
             <button
               onClick={handleUpload}

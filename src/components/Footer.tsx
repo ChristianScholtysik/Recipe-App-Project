@@ -10,20 +10,23 @@ import SocialIcon3Light from "../assets/icons/SocialIcon3Light";
 import SocialIcon3Dark from "../assets/icons/SocialIcon3Dark";
 import SocialIcon4Light from "../assets/icons/SocialIcon4Light";
 import SocialIcon4Dark from "../assets/icons/SocialIcon4Dark";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Footer = () => {
   const darkModeContext = useContext(DarkModeContext);
   return (
     <section className="bg-primary text-tBase py-16 px-8 md:px-24 lg:px-32 flex flex-col md:flex-row justify-between items-center gap-16">
-      <div className="flex items-center gap-6">
-        <div className="flex-shrink-0">
-          {darkModeContext?.darkMode ? <LogoLight /> : <LogoDark />}
-        </div>
-        <span className="font-inter font-semibold text-xl md:text-xxl tracking-wider">
-          Die Rezeptwelt
-        </span>
-      </div>
+      <NavLink to="/">
+        {" "}
+        <div className="flex items-center gap-6">
+          <div className="flex-shrink-0">
+            {darkModeContext?.darkMode ? <LogoLight /> : <LogoDark />}
+          </div>
+          <span className="font-inter font-semibold text-xl md:text-xxl tracking-wider">
+            Die Rezeptwelt
+          </span>
+        </div>{" "}
+      </NavLink>
 
       <div className="flex flex-col items-center md:items-start">
         <h3 className="font-inter font-semibold text-xl mb-6">Social Media</h3>
