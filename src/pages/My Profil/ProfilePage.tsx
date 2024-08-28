@@ -181,7 +181,6 @@ import { useUserContext } from "../../Context/UserContext";
 import LoginStatus from "../../components/LoginStatus";
 import supabaseClient from "../../lib/supabaseClient";
 import { useEffect, useState } from "react";
-import NavBar from "../../components/Navbar";
 
 const ProfilePage = () => {
   const { profile, setProfile } = useProfileData();
