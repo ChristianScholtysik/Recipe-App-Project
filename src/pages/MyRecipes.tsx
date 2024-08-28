@@ -1,11 +1,10 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import supabaseClient from "../lib/supabaseClient";
 import { useUserContext } from "../Context/UserContext";
 import { Recipe } from "../types/supabase-types.own";
 import NewestCard from "../components/NewestCard/NewestCard";
 import LoginStatus from "../components/LoginStatus";
 import NavBar from "../components/Navbar";
-import { FavoriteContext } from "../Context/FavoriteContext";
 
 interface RecipeFavorite {
   id: string;
